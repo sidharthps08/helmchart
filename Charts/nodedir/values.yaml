@@ -105,3 +105,15 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+container:
+  name: nodeapp
+  image: localhost:32000/nodeapp-image
+  port: 8888
+
+
+ports:
+  port: 8090
+  targetPort: 8888
+  type: NodePort

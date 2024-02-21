@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: {{ .Release.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: {{ .Release.Name }}
     spec:
       containers:
-        - name: nodeapp
-          image: localhost:32000/nodeapp-image
+        - name: {{ .Values.containers.name }}
+          image: {{ .Values.containers.image }}
           ports:
-            - containerPort: 8888
+            - containerPort: {{ .Values.containers.port }}

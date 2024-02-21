@@ -107,7 +107,7 @@ tolerations: []
 affinity: {}
 
 
-container:
+containers:
   name: nodeapp
   image: localhost:32000/nodeapp-image
   port: 8888

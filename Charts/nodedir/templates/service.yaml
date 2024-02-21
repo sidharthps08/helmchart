@@ -8,4 +8,4 @@ spec:
   ports: 
     - port: {{ .Values.ports.port }}
       targetPort: {{ .Values.ports.targetPort }}
-      type: {{ .Values.ports.type }}
+  type: {{ .Values.ports.type }}

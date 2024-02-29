@@ -6,10 +6,18 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /fe
         pathType: Prefix
         backend:
           service:
-            name: {{ .Release.Name }}
+            name: myapp
             port:
-              number: {{ .Values.traefik.port }} 
+              number: {{ .Values.traefik.port }}
+      - path: /admin
+        pathType: Prefix
+        backend:
+          service:
+            name: myapp2
+            port:
+              number: {{ .Values.traefik.port }}
+ 
